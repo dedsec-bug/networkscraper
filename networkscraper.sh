@@ -1,6 +1,3 @@
-echo -e "\e[1;33m[+]Finding all the Live IP's\e[0m"
-ipfinder live_domains.txt ipfinder.txt
-
 echo -e "\e[1;33m[+]Finding IP's through ASN block's\e[0m"
 asnip -t $1 -p 
 cat ipfinder.txt cidrs.txt >> tmp-ip.txt
