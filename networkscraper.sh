@@ -1,3 +1,13 @@
+#!/bin/bash
+
+if [ -d ~/recon/$1/$(date +"%d-%m-%Y") ]
+then
+        echo -e "\e[1;33m[+] Direcotry already exists\e[0m"
+else
+        mkdir -p ~/recon/$1/$(date +"%d-%m-%Y")
+        echo -e "\e[1;33m[+] Direcotry Created\e[0m"
+fi
+
 echo -e "\e[1;33m[+]Finding IP's through ASN block's\e[0m"
 asnip -t $1 -p 
 cat ipfinder.txt cidrs.txt >> ~/recon/$1/$(date +"%d-%m-%Y")/tmp-ip.txt
